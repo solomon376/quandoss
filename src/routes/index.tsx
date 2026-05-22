@@ -164,7 +164,7 @@ function Home() {
         <figure className="rounded-3xl p-10 md:p-16 grain" style={{ background: "var(--lime)" }}>
           <blockquote className="font-display text-3xl md:text-4xl leading-tight max-w-3xl">
             "We almost paid ₦42M for a plot that didn't legally exist. QANDOS caught it in 6 days.
-            That report saved my family"
+            That report saved my family."
           </blockquote>
           <figcaption className="mt-8 text-sm">
             <span className="font-medium">Adaeze O.</span>
