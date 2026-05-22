@@ -1,0 +1,229 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* QANDOS — Property verification platform.
+ * Palette: deep teal-blue, pale chartreuse, warm yellow, antique gold, oxblood.
+ * Type: Space Grotesk (display) + DM Sans (body).
+ */
+
+@font-face {
+  font-family: "fallback";
+  src: local("system-ui");
+}
+
+@theme inline {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-lime: var(--lime);
+  --color-wine: var(--wine);
+  --color-wine-foreground: var(--wine-foreground);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px -12px oklch(0.35 0.07 230 / 0.18);
+  --shadow-card: 0 1px 0 oklch(0 0 0 / 0.04), 0 24px 48px -24px oklch(0.35 0.07 230 / 0.25);
+  --shadow-glow:
+    0 0 0 1px oklch(0.55 0.11 230 / 0.15), 0 24px 60px -20px oklch(0.55 0.11 230 / 0.35);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Brand colors translated to oklch */
+  /* #2274a4 deep teal-blue */
+  --brand: #bdab2d;
+  --brand-deep: #bdab2d;
+  /* #e7eb90 pale chartreuse */
+  --lime: oklch(0.9 0.11 110);
+  /* #fadf63 warm yellow */
+  --yellow: oklch(0.9 0.14 92);
+  /* #e6af2e antique gold */
+  --gold: #132759;
+  --gold-foreground: #bdab2d;
+  /* #632b30 oxblood */
+  /* --wine: oklch(0.34 0.08 18);
+  --wine-foreground: oklch(0.97 0.02 90); */
+  --wine: #bdab2d;
+  --wine-foreground: oklch(0.97 0.02 90);
+
+  --cream: oklch(0.985 0.012 95);
+  --ink: oklch(0.18 0.03 240);
+
+  --background: oklch(0.985 0.012 95);
+  --foreground: var(--ink);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+
+  --primary: var(--brand);
+  --primary-foreground: oklch(0.99 0.005 95);
+
+  --secondary: oklch(0.95 0.02 95);
+  --secondary-foreground: var(--ink);
+
+  --muted: oklch(0.95 0.015 95);
+  --muted-foreground: oklch(0.45 0.02 240);
+
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.9 0.015 95);
+  --input: oklch(0.92 0.015 95);
+  --ring: var(--brand);
+
+  --chart-1: var(--brand);
+  --chart-2: var(--gold);
+  --chart-3: var(--wine);
+  --chart-4: var(--lime);
+  --chart-5: var(--yellow);
+
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--brand);
+  --sidebar-primary-foreground: oklch(0.99 0.005 95);
+  --sidebar-accent: oklch(0.95 0.02 95);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: oklch(0.9 0.015 95);
+  --sidebar-ring: var(--brand);
+}
+
+.dark {
+  --background: oklch(0.16 0.03 235);
+  --foreground: oklch(0.97 0.01 95);
+  --card: oklch(0.21 0.04 235);
+  --card-foreground: oklch(0.97 0.01 95);
+  --popover: oklch(0.21 0.04 235);
+  --popover-foreground: oklch(0.97 0.01 95);
+  --primary: oklch(0.78 0.14 80);
+  --primary-foreground: oklch(0.16 0.03 235);
+  --secondary: oklch(0.26 0.04 235);
+  --secondary-foreground: oklch(0.97 0.01 95);
+  --muted: oklch(0.26 0.04 235);
+  --muted-foreground: oklch(0.75 0.02 95);
+  --accent: oklch(0.78 0.14 80);
+  --accent-foreground: oklch(0.16 0.03 235);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.78 0.14 80);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  ::selection {
+    background: var(--gold);
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  .container-q {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-0;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-medium;
+    color: var(--brand-deep);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    display: inline-block;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition;
+    background: var(--brand);
+    color: var(--primary-foreground);
+    box-shadow: var(--shadow-soft);
+  }
+  .btn-primary:hover {
+    background: var(--brand-deep);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition;
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    background: var(--lime);
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition;
+    background: var(--brand);
+    color: var(--ink);
+  }
+  .btn-gold:hover {
+    filter: brightness(0.96);
+  }
+
+  .grain {
+    background-image: radial-gradient(oklch(0 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+
+  .hairline {
+    height: 1px;
+    background: var(--border);
+  }
+}
